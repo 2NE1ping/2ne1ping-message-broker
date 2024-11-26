@@ -48,9 +48,9 @@ def get_messages():
         }
         # 상태 초기화
         messages = {}
-        return jsonify({"status": "두 개의 메시지가 도착했습니다", "data": combined_data})
+        return jsonify({"status": "connection", "data": combined_data})
     else:
-        return jsonify({"status": "메시지가 아직 충분하지 않습니다", "data": messages})
+        return jsonify({"status": "not connection", "data": messages})
 
 if __name__ == '__main__':
     # Kafka Consumer를 별도의 스레드로 실행
